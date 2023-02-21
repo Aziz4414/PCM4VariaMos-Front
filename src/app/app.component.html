@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel = "icon" href = "src/assets/img/logo.png"
+        type = "image/x-icon">
+</head>
+
+<body>
+<nav class="navbar navbar-light" style="background-color: #337ab7">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a  href="https://variamos.com/home/variamos-web/" target="_blank">
+        <img src="/assets/img/VariaMosLogo.5980c241.png" alt class="img-fluid" width="191" height="44"  ></a>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <ul class="nav navbar-nav">
+        <li class="active" >
+          <a class="clickable" (click)="onSelectedProducts()"style="color: rgba(0,0,0,0.98) "> Categories of products  </a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" style="color: rgba(0,0,0,0.9)" >Products by criteria
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a (click)="onProductsPromo()"> Criteria 1 : new arivals  </a></li>
+            <li><a (click)="onProductsDispo()"> Criteria 2 : star products  </a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav pull-right " >
+        <li>
+          <a class = "btn" (click)="onLogout()"style=" background: rgba(246,245,245,0.96) ">
+            <span class="glyphicon glyphicon-log-out" ></span>
+          </a>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="col-md-3">
+    <ul class="list-group" *ngIf="categories">
+      <li [ngClass]="currentCategorie==c ?'active':''"  (click)="getProductsByCat({c : c})" class="list-group-item clickable" *ngFor="let c of categories._embedded.categories">
+        {{c.name}}
+      </li>
+    </ul>
+  </div>
+  <div class ="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
