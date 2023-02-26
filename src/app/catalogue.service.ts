@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent, HttpRequest} from "@angular/common/http";
 import {formatDate} from "@angular/common";
 import { Observable } from 'rxjs';
+import {Product} from "./model/Product";
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,7 @@ export class CatalogueService {
     return this.http.delete(this.host+'/deleteProduct/'+id, { responseType: 'text' });
   }
 
+  createProduct(product: Object): Observable<Object> {
+      return this.http.post(this.host+'/createProduct', product);
+    }
 }

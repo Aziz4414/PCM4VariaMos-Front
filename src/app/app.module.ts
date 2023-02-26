@@ -8,13 +8,15 @@ import { ProductsComponent } from './products/products.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import { HomeCatComponent } from './home-cat/home-cat.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     LoginComponent,
-    HomeCatComponent
+    HomeCatComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

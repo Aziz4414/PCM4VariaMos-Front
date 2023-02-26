@@ -1,0 +1,41 @@
+<h3>New Product Click here to create</h3>
+<div [hidden]="submitted" style="width: 500px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="product.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="product.description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="promotion">promotion</label>
+      <input type="text" class="form-control" id="promotion" required [(ngModel)]="product.promotion" name="promotion">
+    </div>
+    <div class="form-group">
+      <label for="price">price</label>
+      <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="selected">selected</label>
+      <input type="text" class="form-control" id="selected" required [(ngModel)]="product.selected" name="selected">
+    </div>
+    <div class="form-group">
+      <label for="available">available</label>
+      <input type="text" class="form-control" id="available" required [(ngModel)]="product.available" name="available">
+    </div>
+    <div class="form-group">
+      <label for="catId">Category ID </label>
+      <input type="text" class="form-control" id="catId" required [(ngModel)]="product.catId" name="catId">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
