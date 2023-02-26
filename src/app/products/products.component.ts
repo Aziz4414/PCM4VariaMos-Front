@@ -108,4 +108,14 @@ export class ProductsComponent implements OnInit {
     return this.timestamp;
   }
 
+  deleteProduct(id : any) {
+    this.catService.deleteProduct(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          //this.reloadData();
+        },
+        error => console.log(error));
+
+  }
 }

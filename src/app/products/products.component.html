@@ -29,6 +29,7 @@
             <tr>
               <td>{{ p.curentPrice | currency: 'USD'   }}</td>
             </tr>
+            <td><button (click)="deleteProduct(p.id)" class="btn btn-danger btn-delete">Delete</button> </td>
 
 
           </table>

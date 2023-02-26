@@ -24,4 +24,9 @@ export class CatalogueService {
     });
     return this.http.request(req);
   }
+
+  deleteProduct(id: number): Observable<any> {
+    return this.http.delete(this.host+'/deleteProduct/'+id, { responseType: 'text' });
+  }
+
 }
